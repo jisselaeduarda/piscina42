@@ -1,0 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ex00                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeduarda <jeduarda@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/03/07 20:09:42 by jeduarda          #+#    #+#             */
+/*   Updated: 2026/03/07 23:21:56 by jeduarda         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <stdalign.h>
+#include <stdbool.h>
+
+#define SIZE 4
+bool is_valid_line (int line[SIZE], int clue_left, int clue_right){  //line = linha ou coluna do tabuleiro
+//clue_left= pista olhando da esquerda 
+//clue_right= pista olhando da direita
+// true=> linha valida 
+//false => linha invalida
+if (clue_left > 0){//so verifica se existe pista por pode ser 0 e ignorar isso
+    int visible = 0, max_h = 0; //variavel visible quantos predios aparecem
+//max_h, maior predio visto ate agora.
+    for (int i = 0; i <SIZE;i++){// percorre a linha inteira se size =4
+        if (line[i]>max_h){//se o predio atual [e maior ele mostra oque esta aparecendo 
+            visible++;//conta mais um predio visivel
+            max_h = line[i];//atualiza o maior predio visto
+        }
+        {
+            if (visible != clue_right) return false;//se a quantidade vista nao bate com a pista, linha invalida.entao retorna falso
+            
+        }
+    for (int i = SIZE -1; i>= 0; i--)
+        return true;
+        }
+}
+}
+bool check_all(int board[SIZE][SIZE],int clues[4][SIZE]){// verifica todas as linhas e todas as colunas 
+    int line[SIZE],col[SIZE];//line copiar uma linha,= col copia uma coluna
+    for (int i = 0; i < SIZE; i++)//vai verificar cada linha
+    {
+       for (int j = 0; j< SIZE; j++)
+            line[j] = board[i][j];//copia uma linha da matriz
+       {
+        if (!is_valid_line(line, clues[2][i], clues[3][i]))//aqui chamamos a funcao anterior
+        return false;//se nao for valida retorna falso
+        {
+        for (int j = 0; j < SIZE; j++)
+            col[j] = board[j][i];
+        {
+            /* code */
+        }
+        
+        }
+        
+       }
+       
+    }
+    
+}
